@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Về FarmEra</title>
+    <link
+      rel="icon"
+      href="assets/img/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              deepgreen: "#0F3D2E", // Xanh đậm hiện đại
+              olive: "#A3B18A", // Xanh olive nhạt
+              cream: "#F8F9F4", // Trắng kem nền
+              gold: "#E5C97B", // Accent vàng metallic
+              emerald: "#0F5F4A", // Giữ lại để đồng bộ Header/Footer cũ
+              graphite: "#1C1C1C",
+            },
+            fontFamily: {
+              heading: ["Plus Jakarta Sans", "sans-serif"], // Font mới cho tiêu đề
+              body: ["Inter", "sans-serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 10px 40px -10px rgba(0,0,0,0.08)",
+              "gold-glow": "0 0 15px rgba(229, 201, 123, 0.3)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9f4;
+        color: #1c1c1c;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      /* Custom Utilities */
+      .glass-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .text-gradient {
+        background: linear-gradient(90deg, #0f3d2e, #0f5f4a);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bg-gradient-hero {
+        /* IMAGE: Hero background - recommended size approx 2071x600 (cover center) */
+        background: linear-gradient(
+            135deg,
+            rgba(15, 61, 46, 0.95),
+            rgba(15, 61, 46, 0.8)
+          ),
+          url("assets/img/gioi-thieu-hero.png"); /* placeholder: recommended 2071x600, replace with real hero image */
+        background-size: cover;
+        background-position: center;
+      }
+      .card-hover {
+        transition: all 0.4s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+      }
+      .icon-gold-hover:hover {
+        color: #e5c97b;
+        border-color: #e5c97b;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- HEADER -->
+    <header
+      class="fixed w-full top-0 z-50 bg-white border-b-2 border-[#0F3D2E]/10 shadow-md"
+    >
+      <div
+        class="container mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <!-- Logo & Brand -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-[#0F3D2E] to-[#0A2618] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow"
+          >
+            <img
+              src="assets/img/logo-farmera.png"
+              alt="FarmEra"
+              class="w-9 h-9 filter brightness-0 invert"
+            />
+          </div>
+          <div class="hidden sm:block">
+            <div class="text-sm font-bold text-[#0F3D2E] tracking-tight">
+              FarmEra
+            </div>
+            <div class="text-xs text-[#A3B18A] font-medium">
+              Kỷ nguyên Nông nghiệp số
+            </div>
+          </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a
+            href="index.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Trang chủ</a
+          >
+          <a
+            href="san-pham.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Sản phẩm</a
+          >
+          <a
+            href="dich-vu.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Dịch vụ</a
+          >
+          <a
+            href="gioi-thieu.html"
+            class="px-4 py-2 text-[#0F3D2E] font-semibold text-sm rounded-lg hover:bg-[#F8F9F4] transition-colors duration-200 border-b-2 border-[#0F3D2E]"
+            >Giới thiệu</a
+          >
+          <a
+            href="chinh-sach.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Chính sách</a
+          >
+          <a
+            href="lien-he.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Liên hệ</a
+          >
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <form
+            action="san-pham.html"
+            method="get"
+            class="hidden md:flex items-center bg-[#F8F9F4] rounded-full px-4 py-2 border border-[#E5C97B]/30 hover:border-[#E5C97B] transition-colors"
+          >
+            <input
+              name="q"
+              type="search"
+              placeholder="Tìm sản phẩm..."
+              class="bg-transparent text-sm text-[#1C1C1C] placeholder-[#999] focus:outline-none w-40"
+            />
+            <button
+              type="submit"
+              class="text-[#A3B18A] hover:text-[#0F3D2E] transition-colors ml-2"
+            >
+              <i class="fas fa-search text-sm"></i>
+            </button>
+          </form>
+
+          <!-- Cart Icon -->
+          <a
+            href="gio-hang.htm"
+            class="relative p-2.5 rounded-lg bg-[#F8F9F4] hover:bg-[#E5C97B] text-[#0F3D2E] transition-all duration-200 group"
+          >
+            <i class="fas fa-shopping-cart text-lg"></i>
+            <span
+              id="cart-badge"
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 hidden"
+              >0</span
+            >
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="lg:hidden p-2 rounded-lg hover:bg-[#F8F9F4] text-[#0F3D2E]"
+          >
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="mt-20 h-[600px] w-full bg-gradient-hero flex items-center justify-center text-center px-4 relative overflow-hidden"
+    >
+      <div class="absolute top-20 right-20 text-white/10 text-9xl">
+        <i class="fas fa-drone"></i>
+      </div>
+      <div class="absolute bottom-10 left-10 text-white/5 text-9xl">
+        <i class="fas fa-network-wired"></i>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <span
+          class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-4 block animate-fade-in-up"
+          >Về chúng tôi</span
+        >
+        <h1
+          class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+        >
+          FarmEra – Nền tảng TMĐT <br />
+          Dịch vụ Nông nghiệp
+        </h1>
+        <p
+          class="text-lg md:text-xl text-olive/80 font-light mb-10 max-w-2xl mx-auto"
+        >
+          Kết nối nông dân với công nghệ cao – tối ưu chi phí – nâng năng suất.
+        </p>
+        <a
+          href="#ecosystem"
+          class="inline-block px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-deepgreen font-semibold rounded-full transition duration-300"
+        >
+          Khám phá hệ sinh thái
+        </a>
+      </div>
+    </section>
+
+    <!-- New: Three-block promo section (placed under "Đặt trực tuyến" & "Minh bạch giá") -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-deepgreen">
+              Khám phá thêm về FarmEra
+            </h3>
+            <p class="text-gray-500">
+              Ba điểm nổi bật để bạn nắm nhanh giá trị và dịch vụ của chúng tôi.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white rounded-lg p-6 shadow-soft card-hover">
+              <div
+                class="h-40 bg-gray-100 rounded-md overflow-hidden mb-4 flex items-center justify-center"
+              >
+                <i class="fas fa-seedling text-4xl text-deepgreen"></i>
+              </div>
+              <h4 class="font-bold text-lg text-deepgreen mb-2">
+                Thuê ngoài dễ dàng
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                Đặt dịch vụ nhanh chóng, lịch trình rõ ràng và quản lý đơn hàng
+                trực tuyến.
+              </p>
+              <a
+                href="dich-vu.html"
+                class="inline-block px-4 py-2 border border-gold text-gold rounded hover:bg-gold hover:text-deepgreen transition"
+                >Xem dịch vụ</a
+              >
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-soft card-hover">
+              <div
+                class="h-40 bg-gray-100 rounded-md overflow-hidden mb-4 flex items-center justify-center"
+              >
+                <i class="fas fa-file-invoice-dollar text-4xl text-gold"></i>
+              </div>
+              <h4 class="font-bold text-lg text-deepgreen mb-2">
+                Minh bạch giá
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                Bảng giá công khai, so sánh nhanh để bạn chọn gói phù hợp với
+                ngân sách.
+              </p>
+              <a
+                href="chinh-sach.html"
+                class="inline-block px-4 py-2 border border-deepgreen text-deepgreen rounded hover:bg-deepgreen hover:text-white transition"
+                >Tìm hiểu</a
+              >
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-soft card-hover">
+              <div
+                class="h-40 bg-gray-100 rounded-md overflow-hidden mb-4 flex items-center justify-center"
+              >
+                <i class="fas fa-users text-4xl text-olive"></i>
+              </div>
+              <h4 class="font-bold text-lg text-deepgreen mb-2">
+                Hỗ trợ chuyên môn
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                Tư vấn kỹ thuật và lựa chọn dịch vụ phù hợp từng vùng trồng,
+                tiết kiệm chi phí.
+              </p>
+              <a
+                href="lien-he.html"
+                class="inline-block px-4 py-2 bg-deepgreen text-white rounded hover:bg-emerald transition"
+                >Liên hệ</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="w-full lg:w-5/12">
+            <div class="relative">
+              <div
+                class="absolute -top-10 -left-10 w-40 h-40 bg-olive/20 rounded-full blur-3xl"
+              ></div>
+              <div
+                class="bg-cream p-8 rounded-2xl border border-gray-100 shadow-soft relative z-10"
+              >
+                <div class="mb-8 border-l-4 border-deepgreen pl-6">
+                  <span class="block text-5xl font-bold text-deepgreen mb-2"
+                    >80%</span
+                  >
+                  <p class="text-gray-600 font-medium">
+                    Nông sản xuất khẩu dạng thô, giá trị thấp.
+                  </p>
+                </div>
+                <div class="mb-8 border-l-4 border-gold pl-6">
+                  <span class="block text-5xl font-bold text-gold mb-2"
+                    >26%</span
+                  >
+                  <p class="text-gray-600 font-medium">
+                    Lao động cả nước, nhưng chỉ đóng 11% GDP.
+                  </p>
+                </div>
+                <div class="border-l-4 border-olive pl-6">
+                  <span class="block text-2xl font-bold text-olive mb-2"
+                    >Rào cản lớn</span
+                  >
+                  <p class="text-gray-600 font-medium">
+                    Công nghệ khó tiếp cận, chi phí đầu tư quá cao.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-7/12">
+            <h2 class="text-3xl md:text-4xl font-bold text-deepgreen mb-6">
+              Tại sao FarmEra ra đời?
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Nông nghiệp Việt Nam đang đứng trước cơ hội chuyển mình mạnh mẽ,
+              nhưng người nông dân vẫn loay hoay với bài toán:
+              <strong>"Muốn hiện đại hóa nhưng lấy vốn ở đâu?"</strong>
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              FarmEra được xây dựng không chỉ để bán sản phẩm, mà để cung cấp
+              <strong>giải pháp thuê ngoài (outsourcing)</strong>. Thay vì bỏ
+              hàng trăm triệu mua máy bay phun thuốc, nông dân chỉ cần đặt dịch
+              vụ qua FarmEra. Chúng tôi kết nối công nghệ với cánh đồng, biến
+              "nông nghiệp 4.0" từ xa xỉ trở nên bình dân và thiết thực.
+            </p>
+            <div class="h-1 w-20 bg-gold rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Position markers on the map using original image pixel coords (2480x3508)
+      (function () {
+        function positionMarkers() {
+          const img = document.getElementById("vietnam-map");
+          if (!img) return;
+          const wrapper = img.closest(".map-wrapper");
+          const imgRect = img.getBoundingClientRect();
+          const origW = parseInt(
+            img.getAttribute("data-orig-width") || "2480",
+            10
+          );
+          const origH = parseInt(
+            img.getAttribute("data-orig-height") || "3508",
+            10
+          );
+
+          // compute displayed image size (note: using width/height of the element)
+          let displayedW = img.naturalWidth
+            ? img.clientWidth || img.naturalWidth
+            : img.clientWidth;
+          let displayedH = img.naturalHeight
+            ? img.clientHeight || img.naturalHeight
+            : img.clientHeight;
+
+          // If image is using intrinsic aspect and only h is set, adjust displayedW based on aspect ratio
+          if (!displayedW && displayedH) {
+            const aspect = origW / origH;
+            displayedW = displayedH * aspect;
+          }
+
+          // For our layout, image is centered; compute left/top of image inside wrapper
+          const wrapperRect = wrapper.getBoundingClientRect();
+          const imgLeft = imgRect.left - wrapperRect.left;
+          const imgTop = imgRect.top - wrapperRect.top;
+
+          // Helper to position a marker given data-x/data-y in original pixel coordinates
+          function place(markerId, labelId) {
+            const m = document.getElementById(markerId);
+            const lab = document.getElementById(labelId);
+            if (!m) return;
+            const dx = parseFloat(m.getAttribute("data-x")) || 0;
+            const dy = parseFloat(m.getAttribute("data-y")) || 0;
+
+            const px = (dx / origW) * displayedW;
+            const py = (dy / origH) * displayedH;
+
+            // set marker center
+            m.style.left = imgLeft + px + "px";
+            m.style.top = imgTop + py + "px";
+
+            if (lab) {
+              // place label slightly above and to the right of marker
+              lab.style.left = imgLeft + px + 24 + "px";
+              lab.style.top = imgTop + py - 24 + "px";
+            }
+          }
+
+          place("me-kong-marker", "me-kong-label");
+        }
+
+        window.addEventListener("load", positionMarkers);
+        window.addEventListener("resize", function () {
+          setTimeout(positionMarkers, 80);
+        });
+      })();
+    </script>
+
+    <section class="py-20 bg-cream">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-deepgreen">
+            Mô hình Dịch vụ Thuê ngoài
+          </h2>
+          <p class="text-gray-500 mt-2">Giải pháp toàn diện & Tiết kiệm</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-gold transition group"
+          >
+            <div
+              class="w-12 h-12 mb-4 text-deepgreen group-hover:text-gold transition text-3xl"
+            >
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Kết nối Dịch vụ</h3>
+            <p class="text-sm text-gray-500">
+              Liên kết nông dân với đơn vị cung ứng chuyên nghiệp.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-gold transition group"
+          >
+            <div
+              class="w-12 h-12 mb-4 text-deepgreen group-hover:text-gold transition text-3xl"
+            >
+              <i class="fas fa-plane-departure"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Thuê ngoài Drone</h3>
+            <p class="text-sm text-gray-500">
+              Phun thuốc, gieo sạ tự động không cần mua máy.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-gold transition group"
+          >
+            <div
+              class="w-12 h-12 mb-4 text-deepgreen group-hover:text-gold transition text-3xl"
+            >
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Đặt trực tuyến</h3>
+            <p class="text-sm text-gray-500">
+              Thao tác đơn giản trên Web/App FarmEra.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-gold transition group"
+          >
+            <div
+              class="w-12 h-12 mb-4 text-deepgreen group-hover:text-gold transition text-3xl"
+            >
+              <i class="fas fa-piggy-bank"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Giảm vốn đầu tư</h3>
+            <p class="text-sm text-gray-500">
+              Không lo chi phí khấu hao thiết bị đắt đỏ.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-gold transition group"
+          >
+            <div
+              class="w-12 h-12 mb-4 text-deepgreen group-hover:text-gold transition text-3xl"
+            >
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Minh bạch giá</h3>
+            <p class="text-sm text-gray-500">
+              Giá công khai, không phát sinh chi phí ẩn.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-gold transition group"
+          >
+            <div
+              class="w-12 h-12 mb-4 text-deepgreen group-hover:text-gold transition text-3xl"
+            >
+              <i class="fas fa-qrcode"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Truy xuất nguồn gốc</h3>
+            <p class="text-sm text-gray-500">
+              Công nghệ QR code minh bạch quy trình.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div
+            class="bg-gradient-to-br from-deepgreen to-[#0a2e22] p-10 rounded-[20px] text-white relative overflow-hidden card-hover"
+          >
+            <div
+              class="absolute right-0 top-0 opacity-10 text-9xl -mr-10 -mt-10"
+            >
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3
+              class="text-gold font-bold text-xl uppercase mb-4 tracking-wide"
+            >
+              Tầm nhìn
+            </h3>
+            <p class="leading-relaxed font-light text-lg">
+              Trở thành nền tảng TMĐT dịch vụ nông nghiệp hàng đầu Việt Nam,
+              thúc đẩy hiện đại hóa và phát triển bền vững.
+            </p>
+          </div>
+          <div
+            class="bg-white border border-gray-200 p-10 rounded-[20px] text-deepgreen relative overflow-hidden card-hover shadow-lg"
+          >
+            <div
+              class="absolute right-0 top-0 opacity-5 text-9xl -mr-10 -mt-10 text-deepgreen"
+            >
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3
+              class="text-deepgreen font-bold text-xl uppercase mb-4 tracking-wide"
+            >
+              Sứ mệnh
+            </h3>
+            <p class="leading-relaxed font-light text-lg text-gray-600">
+              Kết nối nông dân với các dịch vụ công nghệ cao – drone, tưới thông
+              minh, nhà kính – giúp tối ưu chi phí và nâng cao năng suất.
+            </p>
+          </div>
+          <div
+            class="bg-olive/20 p-10 rounded-[20px] text-deepgreen relative overflow-hidden card-hover"
+          >
+            <div
+              class="absolute right-0 top-0 opacity-10 text-9xl -mr-10 -mt-10 text-deepgreen"
+            >
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3
+              class="text-deepgreen font-bold text-xl uppercase mb-4 tracking-wide"
+            >
+              Giá trị cốt lõi
+            </h3>
+            <ul class="space-y-3 font-medium">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Kết nối
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Tiện lợi
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Chi phí hợp
+                lý
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Minh bạch
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Đồng hành
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-cream overflow-hidden">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center"
+      >
+        <div class="w-full md:w-1/2 pr-0 md:pr-12">
+          <h2 class="text-3xl font-bold text-deepgreen mb-6">
+            Khách hàng & Khu vực trọng điểm
+          </h2>
+          <p class="text-gray-600 mb-8">
+            FarmEra tập trung phát triển mạnh mẽ tại vùng Đồng Bằng Sông Cửu
+            Long, vựa lúa và trái cây lớn nhất cả nước.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 rounded-full bg-deepgreen text-white flex items-center justify-center mt-1 mr-4 shrink-0 font-bold"
+              >
+                1
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Đối tượng khách hàng</h4>
+                <p class="text-sm text-gray-500">
+                  Nông dân, Hộ sản xuất cá thể, Hợp tác xã, Tổ hợp tác nông
+                  nghiệp.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 rounded-full bg-olive text-white flex items-center justify-center mt-1 mr-4 shrink-0 font-bold"
+              >
+                2
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Độ tuổi tiếp cận</h4>
+                <p class="text-sm text-gray-500">
+                  Nhóm tuổi 18–55, những người cởi mở với công nghệ và
+                  smartphone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 mt-10 md:mt-0 relative">
+          <!-- IMAGE: Map (uses original image size 2480x3508) -->
+          <div class="relative map-wrapper">
+            <img
+              id="vietnam-map"
+              src="assets/img/vietnam-map.png"
+              alt="Vietnam Map"
+              class="w-auto h-[400px] mx-auto opacity-30 mix-blend-multiply block"
+              data-orig-width="2480"
+              data-orig-height="3508"
+            />
+
+            <!-- marker container: data-x/data-y are pixel coordinates relative to original image (2480x3508) -->
+            <!-- Initial coords approximated from previous placement; you can fine-tune with JS if needed -->
+            <div
+              id="me-kong-marker"
+              class="map-marker absolute"
+              data-x="622"
+              data-y="2757"
+              aria-hidden="false"
+              style="transform: translate(-50%, -50%)"
+            >
+              <div
+                class="absolute w-32 h-32 bg-gold/30 rounded-full animate-pulse blur-xl -z-10"
+              ></div>
+              <div
+                class="absolute w-4 h-4 bg-deepgreen rounded-full border-2 border-white shadow-lg"
+              ></div>
+              <div
+                class="absolute w-4 h-4 bg-deepgreen rounded-full animate-ping"
+              ></div>
+            </div>
+
+            <div
+              id="me-kong-label"
+              class="map-label absolute bg-white p-4 shadow-lg rounded-lg border-l-4 border-gold"
+            >
+              <span class="font-bold text-deepgreen block">ĐBSCL</span>
+              <span class="text-xs text-gray-500">Khu vực hoạt động chính</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-deepgreen text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="text-gold tracking-widest uppercase text-sm font-bold"
+            >Sự khác biệt của FarmEra</span
+          >
+          <h2 class="text-3xl md:text-4xl font-bold mt-2">
+            Hệ thống Công nghệ Lõi
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="border border-white/10 p-6 rounded-lg hover:bg-white/5 transition hover:border-gold/50"
+          >
+            <i class="fas fa-laptop-code text-gold text-3xl mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">Web & App Platform</h3>
+            <p class="text-gray-400 text-sm">
+              Giao diện trực quan, dễ sử dụng cho mọi lứa tuổi nông dân.
+            </p>
+          </div>
+          <div
+            class="border border-white/10 p-6 rounded-lg hover:bg-white/5 transition hover:border-gold/50"
+          >
+            <i class="fas fa-wifi text-gold text-3xl mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">IoT Sensors</h3>
+            <p class="text-gray-400 text-sm">
+              Cảm biến môi trường, độ ẩm đất, kết nối thời gian thực.
+            </p>
+          </div>
+          <div
+            class="border border-white/10 p-6 rounded-lg hover:bg-white/5 transition hover:border-gold/50"
+          >
+            <i class="fas fa-brain text-gold text-3xl mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">AI Analysis</h3>
+            <p class="text-gray-400 text-sm">
+              Phân tích dữ liệu mùa vụ, dự báo sâu bệnh thông minh.
+            </p>
+          </div>
+          <div
+            class="border border-white/10 p-6 rounded-lg hover:bg-white/5 transition hover:border-gold/50"
+          >
+            <i class="fas fa-map-marked-alt text-gold text-3xl mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">Service Tracking</h3>
+            <p class="text-gray-400 text-sm">
+              Theo dõi vị trí Drone và tiến độ dịch vụ trên bản đồ.
+            </p>
+          </div>
+          <div
+            class="border border-white/10 p-6 rounded-lg hover:bg-white/5 transition hover:border-gold/50"
+          >
+            <i class="fas fa-qrcode text-gold text-3xl mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">QR Tracing</h3>
+            <p class="text-gray-400 text-sm">
+              Truy xuất nguồn gốc nông sản từ lúc gieo trồng.
+            </p>
+          </div>
+          <div
+            class="border border-white/10 p-6 rounded-lg hover:bg-white/5 transition hover:border-gold/50"
+          >
+            <i class="fas fa-shield-alt text-gold text-3xl mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">Secure Payment</h3>
+            <p class="text-gray-400 text-sm">
+              Thanh toán an toàn, minh bạch qua cổng điện tử.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-deepgreen mb-12">
+          Tại sao nên chuyển đổi sang FarmEra?
+        </h2>
+        <div class="flex flex-col md:flex-row gap-0 md:gap-8 max-w-5xl mx-auto">
+          <div
+            class="flex-1 bg-gray-100 p-10 rounded-t-xl md:rounded-l-xl md:rounded-tr-none text-center grayscale opacity-80 hover:opacity-100 transition"
+          >
+            <h3 class="text-gray-500 font-bold text-2xl mb-6">
+              Nông nghiệp Truyền thống
+            </h3>
+            <ul class="space-y-4 text-gray-600 text-left inline-block">
+              <li class="flex items-center">
+                <i class="fas fa-times-circle text-red-400 mr-3"></i> Đầu tư máy
+                móc đắt đỏ
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-times-circle text-red-400 mr-3"></i> Tự vận
+                hành, tốn nhân công
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-times-circle text-red-400 mr-3"></i> Tiếp xúc
+                hóa chất độc hại
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-times-circle text-red-400 mr-3"></i> Chi phí
+                bảo trì cao
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex-1 bg-gradient-to-br from-deepgreen to-emerald p-10 rounded-b-xl md:rounded-r-xl md:rounded-bl-none text-center text-white shadow-2xl transform md:scale-105 z-10"
+          >
+            <h3 class="text-gold font-bold text-2xl mb-6">Giải pháp FarmEra</h3>
+            <ul class="space-y-4 text-left inline-block">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Thuê dịch vụ
+                theo nhu cầu
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Công nghệ cao
+                (Drone, IoT)
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> An toàn sức
+                khỏe 100%
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-gold mr-3"></i> Chi phí tối
+                ưu, không khấu hao
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-cream" id="team">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-deepgreen font-heading"
+          >
+            Đội ngũ Phát triển
+          </h2>
+          <p class="text-gray-500 mt-2">
+            Những con người tâm huyết đứng sau FarmEra.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <!-- Trưởng Ban Điều hành - Nổi bật -->
+          <div class="mb-12">
+            <div
+              class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left"
+            >
+              <img
+                class="w-36 h-36 rounded-full object-cover object-top border-4 border-gold"
+                src="assets/img/thanh-vien/nvkhai.jpg"
+                alt="Nguyễn Văn Khải"
+              />
+              <div>
+                <h3 class="text-xl font-bold text-deepgreen font-heading">
+                  Nguyễn Văn Khải
+                </h3>
+                <p class="text-gold font-semibold mb-2">Trưởng Ban Điều hành</p>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  Hoạch định chiến lược, quản lý dự án tổng thể và kết nối đối
+                  tác.
+                </p>
+                <div
+                  class="flex gap-4 justify-center sm:justify-start text-gray-400"
+                >
+                  <a
+                    href="https://facebook.com/khai.1444"
+                    target="_blank"
+                    class="hover:text-gold transition-colors"
+                    ><i class="fab fa-facebook-f text-lg"></i
+                  ></a>
+                  <a
+                    href="tel:0867566808"
+                    class="hover:text-gold transition-colors"
+                    ><i class="fas fa-phone-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Các thành viên còn lại - Lưới 2 cột -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Thành viên 1 -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center"
+            >
+              <img
+                class="w-28 h-28 rounded-full object-cover object-top mx-auto mb-4 border-4 border-olive/50"
+                src="assets/img/thanh-vien/lttngan.jpg"
+                alt="Lê Thị Thu Ngân"
+              />
+              <h4 class="font-bold text-deepgreen text-lg">Lê Thị Thu Ngân</h4>
+              <p class="text-olive font-medium text-sm mb-3">
+                Trưởng Nhóm Marketing
+              </p>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Xây dựng thương hiệu, quảng bá trên mạng xã hội và chăm sóc
+                khách hàng.
+              </p>
+              <div class="flex gap-4 justify-center text-gray-400">
+                <a href="#" class="hover:text-gold transition-colors"
+                  ><i class="fab fa-facebook-f text-base"></i
+                ></a>
+                <a
+                  href="tel:0792101733"
+                  class="hover:text-gold transition-colors"
+                  ><i class="fas fa-phone-alt text-base"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Thành viên 2 -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center"
+            >
+              <img
+                class="w-28 h-28 rounded-full object-cover object-top mx-auto mb-4 border-4 border-olive/50"
+                src="assets/img/thanh-vien/lhsang.jpg"
+                alt="Lê Hoàng Sang"
+              />
+              <h4 class="font-bold text-deepgreen text-lg">Lê Hoàng Sang</h4>
+              <p class="text-olive font-medium text-sm mb-3">
+                Trưởng Nhóm Vận hành
+              </p>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Quản lý nhà cung cấp, điều phối đơn hàng và kiểm soát chất lượng
+                dịch vụ.
+              </p>
+              <div class="flex gap-4 justify-center text-gray-400">
+                <a href="#" class="hover:text-gold transition-colors"
+                  ><i class="fab fa-facebook-f text-base"></i
+                ></a>
+                <a
+                  href="tel:0792101733"
+                  class="hover:text-gold transition-colors"
+                  ><i class="fas fa-phone-alt text-base"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Thành viên 3 -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center"
+            >
+              <img
+                class="w-28 h-28 rounded-full object-cover object-top mx-auto mb-4 border-4 border-olive/50"
+                src="assets/img/thanh-vien/lcthuan.jpg"
+                alt="Lê Công Thuận"
+              />
+              <h4 class="font-bold text-deepgreen text-lg">Lê Công Thuận</h4>
+              <p class="text-olive font-medium text-sm mb-3">
+                Trưởng Ban Công nghệ
+              </p>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Phát triển nền tảng web/app, bảo mật và tích hợp công nghệ.
+              </p>
+              <div class="flex gap-4 justify-center text-gray-400">
+                <a href="#" class="hover:text-gold transition-colors"
+                  ><i class="fab fa-facebook-f text-base"></i
+                ></a>
+                <a
+                  href="tel:0792101733"
+                  class="hover:text-gold transition-colors"
+                  ><i class="fas fa-phone-alt text-base"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Thành viên 4 -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center"
+            >
+              <img
+                class="w-28 h-28 rounded-full object-cover object-top mx-auto mb-4 border-4 border-olive/50"
+                src="assets/img/thanh-vien/dhqtrieu.jpg"
+                alt="Dương Hoàng Quốc Triệu"
+              />
+              <h4 class="font-bold text-deepgreen text-lg">
+                Dương Hoàng Quốc Triệu
+              </h4>
+              <p class="text-olive font-medium text-sm mb-3">
+                Chuyên gia Nông nghiệp & Tài chính
+              </p>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Hỗ trợ kỹ thuật chuyên môn, tư vấn pháp lý và kiểm soát chi phí.
+              </p>
+              <div class="flex gap-4 justify-center text-gray-400">
+                <a href="#" class="hover:text-gold transition-colors"
+                  ><i class="fab fa-facebook-f text-base"></i
+                ></a>
+                <a
+                  href="tel:0792101733"
+                  class="hover:text-gold transition-colors"
+                  ><i class="fas fa-phone-alt text-base"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white" id="ecosystem">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-deepgreen mb-16">
+          Hệ sinh thái Kết nối FarmEra
+        </h2>
+
+        <div
+          class="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] mx-auto flex items-center justify-center"
+        >
+          <div
+            class="absolute z-20 w-32 h-32 md:w-48 md:h-48 bg-deepgreen rounded-full flex flex-col items-center justify-center shadow-gold-glow border-4 border-gold"
+          >
+            <span class="text-2xl md:text-3xl font-bold text-white font-heading"
+              >FarmEra</span
+            >
+            <span class="text-xs text-gold uppercase mt-1">Platform</span>
+          </div>
+
+          <div
+            class="absolute w-full h-full border border-dashed border-gray-300 rounded-full animate-spin-slow"
+            style="animation-duration: 60s"
+          ></div>
+          <div
+            class="absolute w-[70%] h-[70%] border border-gray-200 rounded-full"
+          ></div>
+
+          <div
+            class="absolute -top-6 bg-white p-3 rounded-xl shadow-lg border border-olive flex flex-col items-center w-28 md:w-32"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-olive/20 text-deepgreen flex items-center justify-center mb-2"
+            >
+              <i class="fas fa-tractor"></i>
+            </div>
+            <span class="text-xs font-bold text-deepgreen">Nông dân</span>
+          </div>
+          <div
+            class="absolute -right-6 bg-white p-3 rounded-xl shadow-lg border border-olive flex flex-col items-center w-28 md:w-32"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-olive/20 text-deepgreen flex items-center justify-center mb-2"
+            >
+              <i class="fas fa-tools"></i>
+            </div>
+            <span class="text-xs font-bold text-deepgreen">Nhà cung cấp</span>
+          </div>
+          <div
+            class="absolute -bottom-6 bg-white p-3 rounded-xl shadow-lg border border-olive flex flex-col items-center w-28 md:w-32"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-olive/20 text-deepgreen flex items-center justify-center mb-2"
+            >
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <span class="text-xs font-bold text-deepgreen">Logistics</span>
+          </div>
+          <div
+            class="absolute -left-6 bg-white p-3 rounded-xl shadow-lg border border-olive flex flex-col items-center w-28 md:w-32"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-olive/20 text-deepgreen flex items-center justify-center mb-2"
+            >
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <span class="text-xs font-bold text-deepgreen">Chuyên gia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0F3D2E] text-white pt-20 pb-8">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12"
+        >
+          <!-- Brand Column -->
+          <div class="lg:col-span-1">
+            <a
+              href="index.html"
+              class="text-2xl font-bold text-[#E5C97B] font-heading tracking-tighter mb-4 flex items-center gap-2"
+            >
+              <img
+                src="assets/img/logo-farmera.png"
+                alt="FarmEra"
+                class="w-8 h-8 filter brightness-0 invert"
+              />
+              <span>Farm<span class="text-white">Era</span></span>
+            </a>
+            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+              Nền tảng kết nối công nghệ nông nghiệp với nông dân Việt Nam.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="https://www.facebook.com/share/1AGQoSJx9m/"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fas fa-comment-dots"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Menu -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Menu
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li>
+                <a href="index.html" class="hover:text-[#E5C97B] transition"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a href="san-pham.html" class="hover:text-[#E5C97B] transition"
+                  >Sản phẩm</a
+                >
+              </li>
+              <li>
+                <a href="dich-vu.html" class="hover:text-[#E5C97B] transition"
+                  >Dịch vụ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gioi-thieu.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Giới thiệu</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Policies -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Chính sách
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Điều khoản sử dụng</a
+                >
+              </li>
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Bảo mật dữ liệu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Đổi trả & hoàn tiền</a
+                >
+              </li>
+              <li>
+                <a href="lien-he.html" class="hover:text-[#E5C97B] transition"
+                  >Liên hệ hỗ trợ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Liên hệ
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-map-marker-alt mr-3 text-[#E5C97B] mt-1 shrink-0"
+                ></i>
+                <span>Số 2, Đường 3/2, Ninh Kiều, Cần Thơ</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-3 text-[#E5C97B]"></i>
+                <a href="tel:0792101733" class="hover:text-[#E5C97B]"
+                  >0903 123 456</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-[#E5C97B]"></i>
+                <a href="mailto:support@farmera.vn" class="hover:text-[#E5C97B]"
+                  >support@farmera.vn</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Nhận tin
+            </h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Đăng ký để nhận cập nhật mùa vụ & khuyến mãi.
+            </p>
+            <form class="flex flex-col gap-2">
+              <input
+                type="email"
+                placeholder="Email của bạn"
+                class="px-4 py-2 rounded bg-white/10 border border-white/20 text-white text-sm placeholder-gray-400 focus:outline-none focus:border-[#E5C97B] transition"
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 bg-[#E5C97B] text-[#0F3D2E] rounded font-bold hover:bg-white transition text-sm"
+              >
+                Đăng ký
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm"
+        >
+          <p>
+            &copy; 2025 FarmEra. All rights reserved. |
+            <a href="#" class="hover:text-[#E5C97B]">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chính sách & Quy định - FarmEra</title>
+    <link
+      rel="icon"
+      href="assets/img/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              deepgreen: "#0F3D2E",
+              olive: "#A3B18A",
+              cream: "#F8F9F4",
+              gold: "#E5C97B",
+              graphite: "#1C1C1C",
+            },
+            fontFamily: {
+              heading: ["Plus Jakarta Sans", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9f4;
+        color: #1c1c1c;
+      }
+      .glass-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      /* Sticky Sidebar styling */
+      .policy-nav-link {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        border-left: 3px solid transparent;
+        color: #6b7280;
+        transition: all 0.3s;
+        font-size: 0.95rem;
+        border-radius: 0 8px 8px 0;
+      }
+      .policy-nav-link i {
+        width: 24px;
+        text-align: center;
+        margin-right: 12px;
+        transition: color 0.3s;
+      }
+      .policy-nav-link:hover,
+      .policy-nav-link.active {
+        border-left-color: #e5c97b;
+        color: #0f3d2e;
+        background-color: rgba(163, 177, 138, 0.1);
+        font-weight: 600;
+      }
+      .policy-nav-link.active i {
+        color: #e5c97b;
+      }
+
+      /* Typography for policy content */
+      .policy-content h2 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0f3d2e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+      .policy-content h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .policy-content p {
+        color: #4b5563;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+      .policy-content ul {
+        list-style-type: none;
+        padding-left: 0;
+        color: #4b5563;
+        margin-bottom: 1rem;
+      }
+      .policy-content li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .policy-content li::before {
+        content: "•";
+        color: #e5c97b;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        font-size: 1.2em;
+        line-height: 1;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- HEADER -->
+    <header
+      class="fixed w-full top-0 z-50 bg-white border-b-2 border-[#0F3D2E]/10 shadow-md"
+    >
+      <div
+        class="container mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <!-- Logo & Brand -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-[#0F3D2E] to-[#0A2618] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow"
+          >
+            <img
+              src="assets/img/logo-farmera.png"
+              alt="FarmEra"
+              class="w-9 h-9 filter brightness-0 invert"
+            />
+          </div>
+          <div class="hidden sm:block">
+            <div class="text-sm font-bold text-[#0F3D2E] tracking-tight">
+              FarmEra
+            </div>
+            <div class="text-xs text-[#A3B18A] font-medium">
+              Kỷ nguyên Nông nghiệp số
+            </div>
+          </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a
+            href="index.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Trang chủ</a
+          >
+          <a
+            href="san-pham.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Sản phẩm</a
+          >
+          <a
+            href="dich-vu.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Dịch vụ</a
+          >
+          <a
+            href="gioi-thieu.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Giới thiệu</a
+          >
+          <a
+            href="chinh-sach.html"
+            class="px-4 py-2 text-[#0F3D2E] font-semibold text-sm rounded-lg hover:bg-[#F8F9F4] transition-colors duration-200 border-b-2 border-[#0F3D2E]"
+            >Chính sách</a
+          >
+          <a
+            href="lien-he.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Liên hệ</a
+          >
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <form
+            action="san-pham.html"
+            method="get"
+            class="hidden md:flex items-center bg-[#F8F9F4] rounded-full px-4 py-2 border border-[#E5C97B]/30 hover:border-[#E5C97B] transition-colors"
+          >
+            <input
+              name="q"
+              type="search"
+              placeholder="Tìm sản phẩm..."
+              class="bg-transparent text-sm text-[#1C1C1C] placeholder-[#999] focus:outline-none w-40"
+            />
+            <button
+              type="submit"
+              class="text-[#A3B18A] hover:text-[#0F3D2E] transition-colors ml-2"
+            >
+              <i class="fas fa-search text-sm"></i>
+            </button>
+          </form>
+
+          <!-- Cart Icon -->
+          <a
+            href="gio-hang.htm"
+            class="relative p-2.5 rounded-lg bg-[#F8F9F4] hover:bg-[#E5C97B] text-[#0F3D2E] transition-all duration-200 group"
+          >
+            <i class="fas fa-shopping-cart text-lg"></i>
+            <span
+              id="cart-badge"
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 hidden"
+              >0</span
+            >
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="lg:hidden p-2 rounded-lg hover:bg-[#F8F9F4] text-[#0F3D2E]"
+          >
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO HEADER -->
+    <div
+      class="mt-[80px] bg-deepgreen py-16 text-center px-4 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[url('assets/img/chinh-sach-hero.png')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-5xl font-bold text-white font-heading mb-4">
+          Chính sách & Quy định
+        </h1>
+        <p class="text-olive text-lg font-light">
+          Nền tảng dịch vụ và công nghệ nông nghiệp số FarmEra
+        </p>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-6 py-12">
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- SIDEBAR NAV (Desktop Sticky) -->
+        <div class="w-full lg:w-1/4">
+          <div
+            class="sticky top-28 bg-white rounded-xl shadow-sm border border-gray-200 p-2"
+          >
+            <h4
+              class="font-bold text-deepgreen my-4 px-4 uppercase text-xs tracking-wider border-b border-gray-100 pb-2"
+            >
+              Danh mục quy định
+            </h4>
+            <nav class="space-y-1" id="policy-nav">
+              <a href="#intro" class="policy-nav-link active">
+                <i class="fas fa-info-circle"></i> Giới thiệu chung
+              </a>
+              <a href="#section-1" class="policy-nav-link">
+                <i class="fas fa-truck-fast"></i> Giao hàng & Triển khai
+              </a>
+              <a href="#section-2" class="policy-nav-link">
+                <i class="fas fa-tools"></i> Bảo hành & Hậu mãi
+              </a>
+              <a href="#section-3" class="policy-nav-link">
+                <i class="fas fa-sync-alt"></i> Đổi trả & Hoàn tiền
+              </a>
+              <a href="#section-4" class="policy-nav-link">
+                <i class="fas fa-user-shield"></i> Bảo mật thông tin
+              </a>
+              <a href="#section-5" class="policy-nav-link">
+                <i class="fas fa-handshake"></i> Cam kết FarmEra
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- CONTENT BODY -->
+        <div
+          class="w-full lg:w-3/4 bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12 policy-content"
+        >
+          <!-- Intro -->
+          <div id="intro" class="mb-12 border-b border-gray-100 pb-8">
+            <p class="text-lg text-gray-700 font-medium leading-relaxed italic">
+              "FarmEra cam kết mang đến cho khách hàng trải nghiệm minh bạch, an
+              toàn và hiệu quả khi sử dụng các sản phẩm – dịch vụ công nghệ cao.
+              Tất cả chính sách đều được xây dựng để bảo vệ quyền lợi của người
+              dùng và đảm bảo chất lượng cao nhất."
+            </p>
+          </div>
+
+          <!-- Section 1 -->
+          <div id="section-1" class="scroll-mt-32 mb-12">
+            <h2>
+              <span
+                class="w-10 h-10 rounded-full bg-deepgreen/10 flex items-center justify-center mr-3 text-deepgreen text-lg"
+                ><i class="fas fa-truck-fast"></i
+              ></span>
+              Giao hàng & Triển khai Dịch vụ
+            </h2>
+
+            <h3>1. Phạm vi Giao hàng</h3>
+            <p>FarmEra áp dụng mô hình phân phối đa kênh linh hoạt:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <strong class="text-deepgreen block mb-1"
+                  >Sản phẩm – vật tư nhỏ gọn</strong
+                >
+                <span class="text-sm text-gray-600"
+                  >Giao qua đội giao hàng nội bộ (xe tải nhẹ & xe máy) trong khu
+                  vực gần kho/trạm dịch vụ. Tối ưu tốc độ – đảm bảo chủ động mùa
+                  vụ.</span
+                >
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <strong class="text-deepgreen block mb-1"
+                  >Thiết bị công nghệ & hàng cồng kềnh</strong
+                >
+                <span class="text-sm text-gray-600"
+                  >Vận chuyển qua các đối tác logistics uy tín: Viettel Post –
+                  GHN – GHTK – J&T Express đảm bảo an toàn thiết bị.</span
+                >
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg md:col-span-2">
+                <strong class="text-deepgreen block mb-1"
+                  >Dịch vụ thuê ngoài (Drone, tưới thông minh...)</strong
+                >
+                <span class="text-sm text-gray-600"
+                  >Triển khai trực tiếp bởi đội ngũ kỹ thuật FarmEra hoặc trạm
+                  dịch vụ địa phương/HTX liên kết.</span
+                >
+              </div>
+            </div>
+
+            <h3>2. Thời gian Giao hàng & Triển khai</h3>
+            <ul>
+              <li>Giao đúng thời hạn đã cam kết trong đơn hàng.</li>
+              <li>
+                Khách hàng có thể theo dõi đơn hàng trực tuyến qua trang
+                <strong>Tracking</strong> của FarmEra.
+              </li>
+              <li>
+                Những dịch vụ phụ thuộc mùa vụ (như drone phun thuốc) sẽ được hỗ
+                trợ ưu tiên đúng thời điểm vàng.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Section 2 -->
+          <div id="section-2" class="scroll-mt-32 mb-12">
+            <h2>
+              <span
+                class="w-10 h-10 rounded-full bg-deepgreen/10 flex items-center justify-center mr-3 text-deepgreen text-lg"
+                ><i class="fas fa-tools"></i
+              ></span>
+              Bảo hành & Hậu mãi
+            </h2>
+
+            <h3>1. Bảo hành Thiết bị & Hệ thống</h3>
+            <p>
+              Bảo hành tiêu chuẩn theo từng nhóm sản phẩm công nghệ. Quy trình
+              được thực hiện bởi Trung tâm hỗ trợ kỹ thuật FarmEra và nhà cung
+              cấp liên kết. Chúng tôi cam kết kiểm tra – bảo trì định kỳ với hệ
+              thống tưới, nhà màng/nhà kính, cảm biến.
+            </p>
+
+            <h3>2. Hỗ trợ kỹ thuật</h3>
+            <div
+              class="bg-cream p-5 rounded-lg border border-olive/30 flex items-start"
+            >
+              <i class="fas fa-headset text-gold text-2xl mr-4 mt-1"></i>
+              <ul class="mb-0 !p-0">
+                <li>
+                  Hỗ trợ kỹ thuật <strong>24/7</strong> qua hotline và nền tảng
+                  số.
+                </li>
+                <li>Hỗ trợ từ xa: video call, chat, hướng dẫn sử dụng.</li>
+                <li>
+                  Đồng hành trọn vòng đời hệ thống: pháp lý – tư vấn mùa vụ –
+                  hướng dẫn vận hành.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div id="section-3" class="scroll-mt-32 mb-12">
+            <h2>
+              <span
+                class="w-10 h-10 rounded-full bg-deepgreen/10 flex items-center justify-center mr-3 text-deepgreen text-lg"
+                ><i class="fas fa-sync-alt"></i
+              ></span>
+              Đổi trả & Hoàn tiền
+            </h2>
+
+            <h3>1. Đổi trả Sản phẩm</h3>
+            <p>Áp dụng cho vật tư, nông dược, thiết bị:</p>
+            <ul>
+              <li>
+                Sản phẩm lỗi kỹ thuật, hư hỏng khi vận chuyển sẽ được đổi mới
+                hoặc hoàn tiền.
+              </li>
+              <li>Có bảo hiểm hàng hóa khi vận chuyển.</li>
+              <li>
+                Quy trình đổi trả minh bạch, đăng tải công khai trên trang web.
+              </li>
+            </ul>
+
+            <h3>2. Hoàn tiền Dịch vụ</h3>
+            <p>Hoàn tiền 100% khi:</p>
+            <ul>
+              <li>Dịch vụ không đạt chất lượng theo cam kết hợp đồng.</li>
+              <li>
+                Không thể triển khai do lỗi từ phía FarmEra hoặc đối tác liên
+                kết.
+              </li>
+              <li>
+                Các dịch vụ theo hợp đồng dài hạn được xử lý theo điều khoản
+                pháp lý riêng.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Section 4 -->
+          <div id="section-4" class="scroll-mt-32 mb-12">
+            <h2>
+              <span
+                class="w-10 h-10 rounded-full bg-deepgreen/10 flex items-center justify-center mr-3 text-deepgreen text-lg"
+                ><i class="fas fa-user-shield"></i
+              ></span>
+              Bảo mật & An toàn thông tin
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <div
+                class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition"
+              >
+                <h3 class="!mt-0 flex items-center text-deepgreen">
+                  <i class="fas fa-lock mr-2"></i> Bảo mật người dùng
+                </h3>
+                <ul class="!p-0 text-sm space-y-2 mt-3">
+                  <li>SSL toàn trang & Mã hóa dữ liệu quan trọng.</li>
+                  <li>Xác thực hai lớp (2FA).</li>
+                  <li>Dữ liệu được quản lý bằng CRM riêng biệt.</li>
+                  <li>Tuyệt đối không chia sẻ dữ liệu cho bên thứ ba.</li>
+                </ul>
+              </div>
+              <div
+                class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition"
+              >
+                <h3 class="!mt-0 flex items-center text-deepgreen">
+                  <i class="fas fa-credit-card mr-2"></i> Bảo mật giao dịch
+                </h3>
+                <ul class="!p-0 text-sm space-y-2 mt-3">
+                  <li>Hỗ trợ chuyển khoản, ví điện tử an toàn.</li>
+                  <li>Mã hóa chuẩn TMĐT quốc tế.</li>
+                  <li>Giá cả luôn công khai – minh bạch.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5 -->
+          <div id="section-5" class="scroll-mt-32">
+            <h2>
+              <span
+                class="w-10 h-10 rounded-full bg-deepgreen/10 flex items-center justify-center mr-3 text-deepgreen text-lg"
+                ><i class="fas fa-handshake"></i
+              ></span>
+              Cam kết FarmEra
+            </h2>
+            <div
+              class="flex items-center justify-center p-8 bg-gradient-to-br from-deepgreen to-[#0a2e22] rounded-xl text-white text-center shadow-lg"
+            >
+              <div>
+                <div
+                  class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <i class="fas fa-star text-2xl text-gold"></i>
+                </div>
+                <h3 class="!text-white font-bold !mt-0 mb-4 text-2xl">
+                  Giá trị thực tế cho người nông dân
+                </h3>
+                <p
+                  class="!text-white text-base mb-0 italic max-w-lg mx-auto leading-relaxed font-medium opacity-90"
+                >
+                  "FarmEra không chỉ bán công nghệ – mà còn cung cấp giải pháp
+                  sản xuất bền vững. Chúng tôi đồng hành lâu dài cùng nông dân,
+                  HTX và tổ hợp tác."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER (Đồng bộ) -->
+    <footer class="bg-[#0F3D2E] text-white pt-20 pb-8">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12"
+        >
+          <!-- Brand Column -->
+          <div class="lg:col-span-1">
+            <a
+              href="index.html"
+              class="text-2xl font-bold text-[#E5C97B] font-heading tracking-tighter mb-4 flex items-center gap-2"
+            >
+              <img
+                src="assets/img/logo-farmera.png"
+                alt="FarmEra"
+                class="w-10 h-10 filter brightness-0 invert"
+              />
+              <span>Farm<span class="text-white">Era</span></span>
+            </a>
+            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+              Nền tảng kết nối công nghệ nông nghiệp với nông dân Việt Nam.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="https://www.facebook.com/share/1AGQoSJx9m/"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fas fa-comment-dots"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Menu -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Menu
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li>
+                <a href="index.html" class="hover:text-[#E5C97B] transition"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a href="san-pham.html" class="hover:text-[#E5C97B] transition"
+                  >Sản phẩm</a
+                >
+              </li>
+              <li>
+                <a href="dich-vu.html" class="hover:text-[#E5C97B] transition"
+                  >Dịch vụ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gioi-thieu.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Giới thiệu</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Policies -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Chính sách
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Điều khoản sử dụng</a
+                >
+              </li>
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Bảo mật dữ liệu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Đổi trả & hoàn tiền</a
+                >
+              </li>
+              <li>
+                <a href="lien-he.html" class="hover:text-[#E5C97B] transition"
+                  >Liên hệ hỗ trợ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Liên hệ
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-map-marker-alt mr-3 text-[#E5C97B] mt-1 shrink-0"
+                ></i>
+                <span>Số 2, Đường 3/2, Ninh Kiều, Cần Thơ</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-3 text-[#E5C97B]"></i>
+                <a href="tel:0792101733" class="hover:text-[#E5C97B]"
+                  >0792 101 733</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-[#E5C97B]"></i>
+                <a href="mailto:support@farmera.vn" class="hover:text-[#E5C97B]"
+                  >support@farmera.vn</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Nhận tin
+            </h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Đăng ký để nhận cập nhật mùa vụ & khuyến mãi.
+            </p>
+            <form class="flex flex-col gap-2">
+              <input
+                type="email"
+                placeholder="Email của bạn"
+                class="px-4 py-2 rounded bg-white/10 border border-white/20 text-white text-sm placeholder-gray-400 focus:outline-none focus:border-[#E5C97B] transition"
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 bg-[#E5C97B] text-[#0F3D2E] rounded font-bold hover:bg-white transition text-sm"
+              >
+                Đăng ký
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm"
+        >
+          <p>
+            &copy; 2025 FarmEra. All rights reserved. |
+            <a href="#" class="hover:text-[#E5C97B]">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT FOR SCROLL SPY -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(".policy-content > div[id]");
+        const navLinks = document.querySelectorAll(".policy-nav-link");
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "-20% 0px -60% 0px",
+          threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(id)) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/cart.js"></script>
+  </body>
+</html>

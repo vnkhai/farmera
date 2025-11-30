@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dịch vụ - FarmEra</title>
+    <link
+      rel="icon"
+      href="assets/img/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              deepgreen: "#0F3D2E",
+              olive: "#A3B18A",
+              cream: "#F8F9F4",
+              gold: "#E5C97B",
+              graphite: "#1C1C1C",
+            },
+            fontFamily: {
+              heading: ["Plus Jakarta Sans", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9f4;
+      }
+      .glass-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(15, 61, 46, 0.1);
+        border-color: #e5c97b;
+      }
+    </style>
+  </head>
+  <body class="antialiased text-graphite">
+    <!-- HEADER -->
+    <header
+      class="fixed w-full top-0 z-50 bg-white border-b-2 border-[#0F3D2E]/10 shadow-md"
+    >
+      <div
+        class="container mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <!-- Logo & Brand -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-[#0F3D2E] to-[#0A2618] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow"
+          >
+            <img
+              src="assets/img/logo-farmera.png"
+              alt="FarmEra"
+              class="w-9 h-9 filter brightness-0 invert"
+            />
+          </div>
+          <div class="hidden sm:block">
+            <div class="text-sm font-bold text-[#0F3D2E] tracking-tight">
+              FarmEra
+            </div>
+            <div class="text-xs text-[#A3B18A] font-medium">
+              Kỷ nguyên Nông nghiệp số
+            </div>
+          </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a
+            href="index.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Trang chủ</a
+          >
+          <a
+            href="san-pham.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Sản phẩm</a
+          >
+          <a
+            href="dich-vu.html"
+            class="px-4 py-2 text-[#0F3D2E] font-semibold text-sm rounded-lg hover:bg-[#F8F9F4] transition-colors duration-200 border-b-2 border-[#0F3D2E]"
+            >Dịch vụ</a
+          >
+          <a
+            href="gioi-thieu.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Giới thiệu</a
+          >
+          <a
+            href="chinh-sach.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Chính sách</a
+          >
+          <a
+            href="lien-he.html"
+            class="px-4 py-2 text-[#555] font-medium text-sm rounded-lg hover:bg-[#F8F9F4] hover:text-[#0F3D2E] transition-all duration-200"
+            >Liên hệ</a
+          >
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <form
+            action="san-pham.html"
+            method="get"
+            class="hidden md:flex items-center bg-[#F8F9F4] rounded-full px-4 py-2 border border-[#E5C97B]/30 hover:border-[#E5C97B] transition-colors"
+          >
+            <input
+              name="q"
+              type="search"
+              placeholder="Tìm sản phẩm..."
+              class="bg-transparent text-sm text-[#1C1C1C] placeholder-[#999] focus:outline-none w-40"
+            />
+            <button
+              type="submit"
+              class="text-[#A3B18A] hover:text-[#0F3D2E] transition-colors ml-2"
+            >
+              <i class="fas fa-search text-sm"></i>
+            </button>
+          </form>
+
+          <!-- Cart Icon -->
+          <a
+            href="gio-hang.htm"
+            class="relative p-2.5 rounded-lg bg-[#F8F9F4] hover:bg-[#E5C97B] text-[#0F3D2E] transition-all duration-200 group"
+          >
+            <i class="fas fa-shopping-cart text-lg"></i>
+            <span
+              id="cart-badge"
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 hidden"
+              >0</span
+            >
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="lg:hidden p-2 rounded-lg hover:bg-[#F8F9F4] text-[#0F3D2E]"
+          >
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="mt-20 bg-deepgreen text-white py-16 text-center px-4 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[url('assets/img/dich-vu-hero.png')] bg-cover bg-center opacity-20"
+      ></div>
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-5xl font-bold font-heading mb-4">
+          Dịch vụ Nông nghiệp Cao cấp
+        </h1>
+        <p class="text-olive text-lg font-light">
+          Giải pháp thuê ngoài tối ưu chi phí – Công nghệ tiên tiến – Hỗ trợ
+          24/7
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTER -->
+    <div class="sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm">
+      <div class="container mx-auto px-6 py-6">
+        <div class="flex flex-col gap-5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-filter text-deepgreen text-lg"></i>
+              <h3
+                class="text-sm font-bold text-deepgreen uppercase tracking-wider"
+              >
+                Phân loại dịch vụ
+              </h3>
+            </div>
+            <button
+              onclick="clearFilters()"
+              class="text-xs font-medium text-gray-500 hover:text-deepgreen hover:bg-cream px-3 py-1 rounded-full transition duration-200 border border-gray-200 hover:border-deepgreen"
+            >
+              <i class="fas fa-redo mr-1"></i>Xóa bộ lọc
+            </button>
+          </div>
+
+          <div class="flex flex-wrap gap-2" id="filter-buttons">
+            <button
+              onclick="filterServices('all')"
+              class="filter-btn active px-4 py-2.5 rounded-full border-2 border-deepgreen bg-deepgreen text-white text-xs font-semibold transition-all duration-300 hover:shadow-md hover:shadow-deepgreen/30"
+            >
+              <i class="fas fa-th-large mr-1.5"></i>Tất cả dịch vụ
+            </button>
+            <button
+              onclick="filterServices('dich-vu-cnc')"
+              class="filter-btn px-4 py-2.5 rounded-full border-2 border-gray-300 text-gray-700 text-xs font-medium hover:border-deepgreen hover:text-deepgreen hover:bg-cream transition-all duration-300 hover:shadow-sm"
+            >
+              <i class="fas fa-drone mr-1.5"></i>Công nghệ Drone
+            </button>
+            <button
+              onclick="filterServices('thue-ngoai')"
+              class="filter-btn px-4 py-2.5 rounded-full border-2 border-gray-300 text-gray-700 text-xs font-medium hover:border-deepgreen hover:text-deepgreen hover:bg-cream transition-all duration-300 hover:shadow-sm"
+            >
+              <i class="fas fa-handshake mr-1.5"></i>Thuê ngoài
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES GRID -->
+    <section class="py-16 bg-cream min-h-screen">
+      <div class="container mx-auto px-6">
+        <div
+          id="service-grid"
+          class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        ></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0F3D2E] text-white pt-20 pb-8">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12"
+        >
+          <!-- Brand Column -->
+          <div class="lg:col-span-1">
+            <a
+              href="index.html"
+              class="text-2xl font-bold text-[#E5C97B] font-heading tracking-tighter mb-4 flex items-center gap-2"
+            >
+              <img
+                src="assets/img/logo-farmera.png"
+                alt="FarmEra"
+                class="w-8 h-8 filter brightness-0 invert"
+              />
+              <span>Farm<span class="text-white">Era</span></span>
+            </a>
+            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+              Nền tảng kết nối công nghệ nông nghiệp với nông dân Việt Nam.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="https://www.facebook.com/share/1AGQoSJx9m/"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#E5C97B] hover:text-[#0F3D2E] transition flex items-center justify-center text-sm"
+                ><i class="fas fa-comment-dots"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Menu -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Menu
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li>
+                <a href="index.html" class="hover:text-[#E5C97B] transition"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a href="san-pham.html" class="hover:text-[#E5C97B] transition"
+                  >Sản phẩm</a
+                >
+              </li>
+              <li>
+                <a href="dich-vu.html" class="hover:text-[#E5C97B] transition"
+                  >Dịch vụ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gioi-thieu.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Giới thiệu</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Policies -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Chính sách
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Điều khoản sử dụng</a
+                >
+              </li>
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Bảo mật dữ liệu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="chinh-sach.html"
+                  class="hover:text-[#E5C97B] transition"
+                  >Đổi trả & hoàn tiền</a
+                >
+              </li>
+              <li>
+                <a href="lien-he.html" class="hover:text-[#E5C97B] transition"
+                  >Liên hệ hỗ trợ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Liên hệ
+            </h4>
+            <ul class="space-y-3 text-gray-300 text-sm">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-map-marker-alt mr-3 text-[#E5C97B] mt-1 shrink-0"
+                ></i>
+                <span>Số 2, Đường 3/2, Ninh Kiều, Cần Thơ</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-3 text-[#E5C97B]"></i>
+                <a href="tel:0792101733" class="hover:text-[#E5C97B]"
+                  >0792 101 733</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-[#E5C97B]"></i>
+                <a href="mailto:support@farmera.vn" class="hover:text-[#E5C97B]"
+                  >support@farmera.vn</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-[#E5C97B] uppercase text-xs tracking-wider"
+            >
+              Nhận tin
+            </h4>
+            <p class="text-gray-300 text-sm mb-4">
+              Đăng ký để nhận cập nhật mùa vụ & khuyến mãi.
+            </p>
+            <form class="flex flex-col gap-2">
+              <input
+                type="email"
+                placeholder="Email của bạn"
+                class="px-4 py-2 rounded bg-white/10 border border-white/20 text-white text-sm placeholder-gray-400 focus:outline-none focus:border-[#E5C97B] transition"
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 bg-[#E5C97B] text-[#0F3D2E] rounded font-bold hover:bg-white transition text-sm"
+              >
+                Đăng ký
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm"
+        >
+          <p>
+            &copy; 2025 FarmEra. All rights reserved. |
+            <a href="#" class="hover:text-[#E5C97B]">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/services.js"></script>
+    <script>
+      const grid = document.getElementById("service-grid");
+
+      function renderServices(data) {
+        grid.innerHTML = "";
+        data.forEach((item) => {
+          const card = `
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm card-hover transition duration-300 group">
+              <div class="relative h-48 bg-gray-200 overflow-hidden">
+                <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur text-deepgreen text-xs font-bold px-3 py-1 rounded-full border border-olive/30 shadow-sm uppercase">Dịch vụ</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-heading font-bold text-lg text-deepgreen mb-2 truncate">${item.name}</h3>
+                <div class="flex justify-between items-end mt-4">
+                  <span class="text-gold font-bold text-lg">${item.price}</span>
+                  <div class="flex gap-2">
+                    <a href="chi-tiet-dv.html?id=${item.id}" class="text-xs font-bold text-deepgreen hover:text-gold border-b border-deepgreen hover:border-gold transition pb-0.5">Chi tiết</a>
+                    <button onclick="addToCart(${item.id})" class="text-xs font-bold text-deepgreen hover:text-gold transition pb-0.5"><i class="fas fa-plus-circle"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          grid.innerHTML += card;
+        });
+      }
+
+      function filterServices(category) {
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.remove(
+            "bg-deepgreen",
+            "text-white",
+            "border-deepgreen",
+            "active"
+          );
+          btn.classList.add("text-gray-600", "border-gray-200");
+        });
+        if (event && event.target) {
+          event.target.classList.remove("text-gray-600", "border-gray-200");
+          event.target.classList.add(
+            "bg-deepgreen",
+            "text-white",
+            "border-deepgreen",
+            "active"
+          );
+        }
+
+        if (category === "all") {
+          renderServices(window.services);
+        } else {
+          const filtered = window.services.filter(
+            (s) => s.category === category
+          );
+          renderServices(filtered);
+        }
+      }
+
+      function clearFilters() {
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.remove(
+            "bg-deepgreen",
+            "text-white",
+            "border-deepgreen",
+            "active"
+          );
+          btn.classList.add("text-gray-600", "border-gray-200");
+        });
+        document
+          .querySelector(".filter-btn:first-child")
+          .classList.add(
+            "bg-deepgreen",
+            "text-white",
+            "border-deepgreen",
+            "active"
+          );
+        renderServices(window.services);
+      }
+
+      function addToCart(id) {
+        const service = window.services.find((s) => s.id === id);
+        if (service) {
+          addItemToCart(service); // Gọi hàm chung từ cart.js
+        }
+      }
+
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem("farmera_cart")) || [];
+        const badge = document.getElementById("cart-badge");
+        if (cart.length > 0) {
+          badge.classList.remove("hidden");
+          badge.innerText = cart.length;
+        } else {
+          badge.classList.add("hidden");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderServices(window.services);
+        updateAllCartBadges();
+      });
+    </script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/cart.js"></script>
+  </body>
+</html>

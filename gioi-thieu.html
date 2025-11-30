@@ -195,6 +195,7 @@
 
           <!-- Mobile Menu Button -->
           <button
+            id="mobile-menu-button"
             class="lg:hidden p-2 rounded-lg hover:bg-[#F8F9F4] text-[#0F3D2E]"
           >
             <i class="fas fa-bars text-lg"></i>
@@ -202,6 +203,57 @@
         </div>
       </div>
     </header>
+
+    <!-- MOBILE MENU (New) -->
+    <div
+      id="mobile-menu"
+      class="hidden lg:hidden fixed inset-0 bg-black/50 z-[99]"
+    >
+      <div class="w-4/5 max-w-sm h-full bg-white shadow-2xl flex flex-col py-6">
+        <div class="px-6 pb-4 border-b border-gray-200">
+          <a href="index.html" class="flex items-center gap-3">
+            <img
+              src="assets/img/logo-farmera.png"
+              alt="FarmEra"
+              class="w-9 h-9"
+            />
+            <span class="font-bold text-deepgreen text-lg">FarmEra</span>
+          </a>
+        </div>
+        <nav class="flex-1 px-6 py-4 space-y-2 text-lg">
+          <a href="index.html" class="block py-2 text-gray-700 hover:text-gold"
+            >Trang chủ</a
+          >
+          <a
+            href="san-pham.html"
+            class="block py-2 text-gray-700 hover:text-gold"
+            >Sản phẩm</a
+          >
+          <a
+            href="dich-vu.html"
+            class="block py-2 text-gray-700 hover:text-gold"
+            >Dịch vụ</a
+          >
+          <a href="gioi-thieu.html" class="block py-2 text-gold font-semibold"
+            >Giới thiệu</a
+          >
+          <a
+            href="chinh-sach.html"
+            class="block py-2 text-gray-700 hover:text-gold"
+            >Chính sách</a
+          >
+          <a
+            href="lien-he.html"
+            class="block py-2 text-gray-700 hover:text-gold"
+            >Liên hệ</a
+          >
+        </nav>
+        <div class="px-6 text-sm text-gray-400">
+          &copy; 2025 FarmEra. All rights reserved.
+        </div>
+      </div>
+      <div id="mobile-menu-overlay" class="flex-1 h-full"></div>
+    </div>
 
     <section
       class="mt-20 h-[600px] w-full bg-gradient-hero flex items-center justify-center text-center px-4 relative overflow-hidden"
@@ -1268,5 +1320,20 @@
     <script src="assets/js/services.js"></script>
     <script src="assets/js/search.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script>
+      // Mobile Menu Toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuOverlay = document.getElementById("mobile-menu-overlay");
+
+        const toggleMenu = () => mobileMenu.classList.toggle("hidden");
+
+        if (menuButton && mobileMenu) {
+          menuButton.addEventListener("click", toggleMenu);
+          menuOverlay.addEventListener("click", toggleMenu);
+        }
+      });
+    </script>
   </body>
 </html>
